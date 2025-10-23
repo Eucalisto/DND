@@ -1,0 +1,108 @@
+{
+  "monsters": [
+    {
+      "index": "arauto-orcus",
+      "name": "Arauto de Orcus",
+      "type": "Morto-vivo",
+      "challengeRating": 5.0,
+      "imageUrl": "https://static.wikia.nocookie.net/forgottenrealms/images/2/2a/Rage_of_demons_-_Orcus_-_D%26D_5.jpg/revision/latest?cb=20220926152224",
+      "imageBackgroundColorLight": "#FAF9F8",
+      "imageBackgroundColorDark": "#262626",
+      "subtype": "Médio",
+      "subtitle": "Morto-vivo médio, Caótico Mau",
+      "size": "Medium",
+      "alignment": "Chaotic Evil",
+      "armorClass": 14,
+      "hitPoints": 85,
+      "hitDice": "10d8+40",
+      "senses": ["darkvision 18 m", "Percepção passiva 12"],
+      "languages": "Comum, Abissal",
+      "speedValues": [
+        {"type": "WALK", "valueFormatted": "9m", "index": "arauto-orcus-WALK-0"}
+      ],
+      "abilityScores": [
+        {"type": "STRENGTH", "value": 14, "modifier": 2},
+        {"type": "DEXTERITY", "value": 12, "modifier": 1},
+        {"type": "CONSTITUTION", "value": 16, "modifier": 3},
+        {"type": "INTELLIGENCE", "value": 11, "modifier": 0},
+        {"type": "WISDOM", "value": 14, "modifier": 2},
+        {"type": "CHARISMA", "value": 16, "modifier": 3}
+      ],
+      "savingThrows": [
+        {"index": "saving-throw-wisdom", "modifier": 5, "type": "WISDOM"},
+        {"index": "saving-throw-charisma", "modifier": 6, "type": "CHARISMA"}
+      ],
+      "damageResistances": [
+        {"index": "necrotic", "type": "NECROTIC", "name": "Necrótico"},
+        {"index": "nonmagical-slash", "type": "SLASHING", "name": "Cortante não mágico"},
+        {"index": "nonmagical-bludgeon", "type": "BLUDGEONING", "name": "Contundente não mágico"},
+        {"index": "nonmagical-pierce", "type": "PIERCING", "name": "Perfurante não mágico"}
+      ],
+      "damageImmunities": [
+        {"index": "poison", "type": "POISON", "name": "Veneno"},
+        {"index": "poisoned", "type": "POISONED", "name": "Envenenado"}
+      ],
+      "damageVulnerabilities": [
+        {"index": "radiant", "type": "RADIANT", "name": "Radiante"}
+      ],
+      "specialAbilities": [
+        {
+          "index": "aura-da-morte",
+          "type": "Aura da Morte (Recarga 5–6)",
+          "name": "Aura da Morte",
+          "description": "Inimigos a 6 m sofrem CD 14 CON ou 2d6 de dano necrótico; mortos sob a aura se erguem como zumbis."
+        },
+        {
+          "index": "servico-de-orcus",
+          "type": "Serviço de Orcus",
+          "name": "Serviço de Orcus",
+          "description": "3/dia: Infligir Ferimentos, Cegar/Ensurdecer, Animar Mortos; 1/dia: Murchar, Toque Vampírico, Amaldiçoar"
+        },
+        {
+          "index": "olhar-profano",
+          "type": "Olhar Profano (Recarga 5–6)",
+          "name": "Olhar Profano",
+          "description": "Alvo a até 9 m deve fazer CD 14 SAB ou sofrer 3d8 de dano necrótico e ficar amedrontado até o final do próximo turno."
+        }
+      ],
+      "actions": [
+        {
+          "id": "multi-cajado",
+          "damageDices": [],
+          "abilityDescription": {
+            "index": "multi-cajado",
+            "type": "Arauto de Orcus realiza 2 ataques com o Cajado de Ossos.",
+            "name": "Ataque Múltiplo"
+          }
+        },
+        {
+          "id": "cajado-ossos",
+          "damageDices": [
+            {"dice": "1d10+3", "damage": {"index": "contundente", "type": "BLUDGEONING", "name": "Contundente"}},
+            {"dice": "2d6", "damage": {"index": "necrotic", "type": "NECROTIC", "name": "Necrótico"}}
+          ],
+          "attackBonus": 5,
+          "abilityDescription": {
+            "index": "cajado-ossos",
+            "type": "Alcance 1,5 m, 1d10+3 cont. + 2d6 necrótico",
+            "name": "Cajado de Ossos"
+          }
+        },
+        {
+          "id": "invocar-mortos",
+          "damageDices": [],
+          "abilityDescription": {
+            "index": "invocar-mortos",
+            "type": "1/dia: invoca até 3 esqueletos ou 2 zumbis por 1 minuto.",
+            "name": "Invocar Mortos"
+          }
+        }
+      ],
+      "tactics": [
+        "Abre o combate com Olhar Profano e ativa Aura da Morte",
+        "Mantém distância usando Blight ou Toque Vampírico para causar dano e se curar",
+        "Quando cai abaixo de 20 PV, explode em energia necrótica: 3d8 de dano em 6 m (teste CD 14 CON para metade)"
+      ]
+    }
+  ]
+}
